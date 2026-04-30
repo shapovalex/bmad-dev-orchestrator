@@ -5,8 +5,6 @@ import os
 
 load_dotenv()
 
-FOLDER = Path("/Users/oleksii/IdeaProjects/claude-sdk-exp")
-
 async def execute_agent(prompt) -> None:
     folder = os.getenv("BMAD_PROJECT_FOLDER")
     print(f"Working directory: {folder}")
@@ -17,6 +15,7 @@ async def execute_agent(prompt) -> None:
         cwd=str(folder),
         allowed_tools=["Read", "Write", "Edit", "Bash", "Glob", "Grep"],
         include_partial_messages=True,
+        model="claude-sonnet-4-6"
     )
 
     async for message in query(prompt=prompt, options=options):
