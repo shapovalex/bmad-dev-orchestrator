@@ -13,7 +13,10 @@ async def execute_agent(prompt) -> None:
 
     options = ClaudeAgentOptions(
         cwd=str(folder),
-        allowed_tools=["Read", "Write", "Edit", "Bash", "Glob", "Grep"],
+        allowed_tools=["Read", "Write", "Edit", "Bash", "Glob", "Grep",
+                       "Agent", "WebFetch", "WebSearch", "TodoWrite", "BashOutput",
+                       "KillBash", "mcp__claude-in-chrome__*"],
+        env={"UV_PROJECT_ENVIRONMENT": f"{folder}/.venv"},
         include_partial_messages=True,
         model="claude-sonnet-4-6"
     )
