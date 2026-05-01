@@ -30,7 +30,7 @@ async def main():
 
 def print_progress(iteration, total_iterations, step):
     print("---------------------------------------------")
-    print(f"Iteration {iteration}/{total_iterations}")
+    print(f"Iteration {iteration+1}/{total_iterations}")
     print(f"Step {step}")
     print("---------------------------------------------")
 
