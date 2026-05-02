@@ -18,7 +18,8 @@ async def execute_agent(prompt) -> None:
                        "KillBash", "mcp__claude-in-chrome__*"],
         env={"UV_PROJECT_ENVIRONMENT": f"{folder}/.venv"},
         include_partial_messages=True,
-        model="claude-sonnet-4-6"
+        model="claude-sonnet-4-6",
+        effort="medium"
     )
 
     async for message in query(prompt=prompt, options=options):
